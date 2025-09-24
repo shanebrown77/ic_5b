@@ -27,7 +27,7 @@ const customerType = "member";
 
 
 // category discount using switch statement 
-
+function getCatDiscount(category){
 switch (category){
     case "gear":
         return 0.10
@@ -41,11 +41,11 @@ switch (category){
     case "access":
         return 0.05
         break;
-    case "default":
+    default:
         return 0
      break;   
  }
-
+}
 // price after category discount 
 
 function priceAfterCategoryDiscount(product) {
