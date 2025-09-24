@@ -1,13 +1,18 @@
 // in class coding challenge 5
 
 // Esports Arena catalog (price per unit)
+console.log(`\n---products before discounts are applied/step2---`)
+
 const products = [
   { id: 201, name: "Pro Mouse (wired)",   category: "gear",    price: 39.99 },
   { id: 202, name: "Team Jersey",         category: "apparel", price: 49.5  },
   { id: 203, name: "Energy Drink 6-pack", category: "snacks",  price: 12.0  },
   { id: 204, name: "Arena Day Pass",      category: "access",  price: 15.0  },
   { id: 205, name: "Switchable Keycaps",  category: "gear",    price: 19.0  }
+
+
 ];
+
 
 // Example cart (product & quantity)
 const cart = [
@@ -21,33 +26,40 @@ const cart = [
 const customerType = "member";
 
 
-// Category Discount
+// category discount using switch statement 
 
-function getCategoryDiscount(gear) {
-   for (let product of products) {
-        if product.category == "gear":
-            return.10
-    
+switch (category){
+    case "gear":
+        return 0.10
+        break;
+    case "apparel":
+        return 0.15
+        break;
+    case "snacks":
+        return 0.08
+        break;
+    case "access":
+        return 0.05
+        break;
+    case "default":
+        return 0
+     break;   
+ }
 
+// price after category discount 
 
-
-
-
-
-   }
-   
-    switch (category){
-     case "gear":
-        return 0.10;
-     case "apparel":
-        return 0.15;
-     case: "snacks":
-        return 0.08;
-     case "access":
-        return 0.05;
-    default:
-        return 0;  
-    }
+function priceAfterCategoryDiscount(product) {
+   rate = getCatDiscount(product.category)
+    return product.price * (1-rate)
 }
 
-// 
+// finding product by id
+
+function findProductById(id) {
+    return products.find(p => p.id === id) || null; 
+}
+
+
+
+
+
